@@ -5,6 +5,10 @@ import Estoque.Estoque;
 
 public class Menus {
 
+    public Menus() {
+
+    }
+
     public void printMenuPrincipal() {
         System.out.println(" ");
         System.out.println("1 - Cadastrar Cliente");
@@ -19,6 +23,8 @@ public class Menus {
         System.out.println(" ");
         System.out.println("MENU DE CADASTRO CLIENTE");
         listagemMenuClientes(bancoClientes);
+        System.out.println("6 - Voltar");
+
     }
 
     public void printMenuDeletarCliente(BancoClientes bancoClientes) {
@@ -63,15 +69,15 @@ public class Menus {
         System.out.println(" ");
         System.out.println("MENU DE DELETAR ESTOQUE");
         listagemMenuEstoque(estoque);
-        System.out.println("9 - Voltar");
+        System.out.println("8 - Voltar");
     }
 
     private void listagemMenuClientes(BancoClientes bancoClientes) {
-        System.out.println("1 - " + bancoClientes.getCliente(0));
-        System.out.println("2 - " + bancoClientes.getCliente(1));
-        System.out.println("3 - " + bancoClientes.getCliente(2));
-        System.out.println("4 - " + bancoClientes.getCliente(3));
-        System.out.println("5 - " + bancoClientes.getCliente(4));
+        System.out.println("1 - " + bancoClientes.pegarNomeCliente(0));
+        System.out.println("2 - " + bancoClientes.pegarNomeCliente(1));
+        System.out.println("3 - " + bancoClientes.pegarNomeCliente(2));
+        System.out.println("4 - " + bancoClientes.pegarNomeCliente(3));
+        System.out.println("5 - " + bancoClientes.pegarNomeCliente(4));
     }
 
     private void listagemMenuEstoque(Estoque estoque) {
