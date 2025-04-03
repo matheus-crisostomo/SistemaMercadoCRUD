@@ -8,23 +8,31 @@ public class BancoClientes {
     }
 
     public void cadastrarCliente(int posicao, String nome, String endereco, String telefone) {
-        cliente[posicao] = new Cliente(nome, endereco, telefone);
+        if (posicao < 0 || posicao >= cliente.length) {
+            System.out.println("Posição de registro não existe!");
+        }else if(cliente[posicao] != null){
+            System.out.println("Posção de registro ja preenchida");
+        }else{
+            cliente[posicao] = new Cliente(nome, endereco, telefone);
+        }
+
     }
 
-    public void editarCliente(int posicao, Cliente clienteObj, String nome, String endereco, String telefone) {
-        clienteObj.putCliente(nome, endereco, telefone);
+    public void editarCliente(int posicao, String nome, String endereco, String telefone) {
+        if (posicao < 0 || posicao >= cliente.length) {
+            System.out.println("Posição de edição não existe!");
+        }else if(cliente[posicao] == null){
+            System.out.println("Posição selecionada não possui dados!");
+        }else{
+            cliente[posicao].putCliente(nome, endereco, telefone);
+        }
     }
 
     public void excluirCliente(int posicao) {
+        cliente[posicao].deleteCliente();
         cliente[posicao] = null;
     }
 
-    public Cliente getCliente(int posicao) {
-        if (posicao < 0 || posicao >= cliente.length) {
-            return null;
-        }
-        return cliente[posicao];
-    }
 
     public String pegarNomeCliente(int posicao) {
         if (cliente[posicao] != null && cliente[posicao].pegarNome() != null){

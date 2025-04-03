@@ -8,6 +8,8 @@ public class Estoque {
     public Estoque() {
     }
 
+
+
     public void cadastrarItemEstoque(String nomeItem, int quantidade, float preco, int posicaoEstoque) {
         this.nome[posicaoEstoque] = nomeItem;
         this.quantidade[posicaoEstoque] = quantidade;
@@ -28,6 +30,8 @@ public class Estoque {
         System.out.println("Preço: R$" + preco[posicaoEstoque]);
     }
 
+    //metodo para listar todos itens do estoque
+
     public void listarEstoque() {
         for (int i = 0; i < 7; i++) {
             if (nome[i] != null) {
@@ -37,16 +41,21 @@ public class Estoque {
         }
     }
 
-    public String getNome(int posicao) {
+//    public String getNome(int posicao) {
+//        if (nome[posicao] != null) {
+//            return nome[posicao];
+//        }
+//        else{
+//            return " ";
+//        }
+//    };
+
+    public String getNomeEstoque(int posicao) {
         if (nome[posicao] != null) {
             return nome[posicao];
         }
         else{
             return " ";
         }
-    };
-
-    public String getNomeEstoque(int posicaoEstoque) {
-        return getNome(posicaoEstoque);
     }
 }

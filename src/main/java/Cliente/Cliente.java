@@ -37,10 +37,5 @@ public class Cliente {
             return nome;
         }
     }
-
-    public String getNome() {
-        return nome;
-    }
-
 }
 

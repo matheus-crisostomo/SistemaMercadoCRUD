@@ -1,5 +1,4 @@
 import Cliente.BancoClientes;
-import Cliente.Cliente;
 import Estoque.Estoque;
 import Menus.Menus;
 
@@ -11,6 +10,17 @@ public class Main {
         BancoClientes bancoClientes = new BancoClientes();
         Estoque estoque = new Estoque();
         Menus menu = new Menus();
+
+        bancoClientes.cadastrarCliente(0,"Matheus", "Conjunto Clock Tower", "12 34567-8901");
+        bancoClientes.cadastrarCliente(0,"Gabriel", "Avenida das três bermudas", "12 34567-8901");
+        bancoClientes.cadastrarCliente(0,"Cristhian", "Condominio Factory", "12 34567-8901");
+        bancoClientes.cadastrarCliente(0,"Felipe", "Complexo Cidade Alta", "12 34567-8901");
+
+        estoque.cadastrarItemEstoque("Feijao - 1kg", 20, 10.0f, 0);
+        estoque.cadastrarItemEstoque("Arroz - 1kg", 30, 12.0f, 1);
+        estoque.cadastrarItemEstoque("Açucar - 1kg", 25, 5.50f, 2);
+        estoque.cadastrarItemEstoque("Café - 200g", 10, 1000.0f, 3);
+        estoque.cadastrarItemEstoque("Sal", 10, 1.2f, 4);
 
         while (true) {
             menu.printMenuPrincipal();
@@ -110,14 +120,13 @@ public class Main {
                         sc.nextLine();
                         switch (opcaoMenuAlterar) {
                             case 1, 2, 3, 4, 5: {
-                                Cliente clienteSelect = bancoClientes.getCliente(opcaoMenuAlterar - 1);
                                 System.out.println("Digite o novo nome do cliente: ");
                                 String nome = sc.nextLine();
                                 System.out.println("Digite o novo endereço do cliente: ");
                                 String endereco = sc.nextLine();
                                 System.out.println("Digite o novo telefone do cliente: ( 12 34567-8901 )");
                                 String telefone = sc.nextLine();
-                                bancoClientes.editarCliente(opcaoMenuAlterar - 1, clienteSelect, nome, endereco, telefone);
+                                bancoClientes.editarCliente(opcaoMenuAlterar - 1, nome, endereco, telefone);
                             }
                             break;
                             case 6: {

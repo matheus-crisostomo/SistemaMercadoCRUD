@@ -3,14 +3,18 @@ package Menus;
 import Cliente.BancoClientes;
 import Estoque.Estoque;
 
+
 public class Menus {
-
     public Menus() {
-
     }
+
+
+    //metodos print para os menus facilitando o uso no main
+
 
     public void printMenuPrincipal() {
         System.out.println(" ");
+        System.out.println("BEM VINDO AO COMMIT & BUY");
         System.out.println("1 - Cadastrar Cliente");
         System.out.println("2 - Deletar Cliente");
         System.out.println("3 - Dados Armazenados");
@@ -72,6 +76,9 @@ public class Menus {
         System.out.println("8 - Voltar");
     }
 
+
+    //listagem de Clientes para o menu
+
     private void listagemMenuClientes(BancoClientes bancoClientes) {
         System.out.println("1 - " + bancoClientes.pegarNomeCliente(0));
         System.out.println("2 - " + bancoClientes.pegarNomeCliente(1));
@@ -79,6 +86,8 @@ public class Menus {
         System.out.println("4 - " + bancoClientes.pegarNomeCliente(3));
         System.out.println("5 - " + bancoClientes.pegarNomeCliente(4));
     }
+
+    //Listagem de Estoque para o menu
 
     private void listagemMenuEstoque(Estoque estoque) {
         System.out.println("1 - " + estoque.getNomeEstoque(0));
