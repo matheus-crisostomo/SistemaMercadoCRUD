@@ -35,7 +35,6 @@ public class Estoque {
     public void listarEstoque() {
         for (int i = 0; i < 7; i++) {
             if (nome[i] != null) {
-                System.out.println(i+1);
                 getItemEstoque(i);
             }
         }

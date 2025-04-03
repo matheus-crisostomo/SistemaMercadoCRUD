@@ -11,9 +11,10 @@ public class BancoClientes {
         if (posicao < 0 || posicao >= cliente.length) {
             System.out.println("Posição de registro não existe!");
         }else if(cliente[posicao] != null){
-            System.out.println("Posção de registro ja preenchida");
+            System.out.println("Posição de registro ja preenchida");
         }else{
             cliente[posicao] = new Cliente(nome, endereco, telefone);
+            System.out.println("Cliente cadastrado com sucesso!");
         }
 
     }
